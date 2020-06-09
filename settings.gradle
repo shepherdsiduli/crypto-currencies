@@ -1,2 +1,3 @@
+include ':data'
 rootProject.name='Crypto Currencies'
 include ':app'
