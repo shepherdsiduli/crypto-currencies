@@ -11,16 +11,19 @@ import com.shepherd.data.entities.CryptoCoinEntity;
 
 import java.util.List;
 
-public class LocalDataSource implements DataSource<List<CryptoCoinEntity>>{
+public class LocalDataSource implements DataSource<List<CryptoCoinEntity>> {
     private final RoomDb mDb;
-    private final MutableLiveData<String> mError=new MutableLiveData<>();
+    private final MutableLiveData<String> mError = new MutableLiveData<>();
+
     public LocalDataSource(Context mAppContext) {
-        mDb= RoomDb.getDatabase(mAppContext);
+        mDb = RoomDb.getDatabase(mAppContext);
     }
+
     @Override
     public LiveData<List<CryptoCoinEntity>> getDataStream() {
         return mDb.coinDao().getAllCoinsLive();
     }
+
     @Override
     public LiveData<String> getErrorStream() {
         return mError;
@@ -29,8 +32,7 @@ public class LocalDataSource implements DataSource<List<CryptoCoinEntity>>{
     public void writeData(List<CryptoCoinEntity> coins) {
         try {
             mDb.coinDao().insertCoins(coins);
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
             mError.postValue(e.getMessage());
         }
@@ -41,8 +43,7 @@ public class LocalDataSource implements DataSource<List<CryptoCoinEntity>>{
     }
 
     @VisibleForTesting
-    public void deleteAllCoins()
-    {
+    public void deleteAllCoins() {
         mDb.coinDao().deleteAllCoins();
     }
 }

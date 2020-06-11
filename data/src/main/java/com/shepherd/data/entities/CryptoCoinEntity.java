@@ -37,13 +37,13 @@ public class CryptoCoinEntity {
     @ColumnInfo(name="rank")
     private String rank;
 
-    @JsonProperty("price_usd")
+    @JsonProperty("quote.USD.price")
     private String priceUsd;
     @JsonProperty("price_btc")
     private String priceBtc;
     @JsonProperty("24h_volume_usd")
     private String _24hVolumeUsd;
-    @JsonProperty("market_cap_usd")
+    @JsonProperty("quote.USD.market_cap")
     private String marketCapUsd;
     @JsonProperty("available_supply")
     private String availableSupply;
@@ -108,12 +108,13 @@ public class CryptoCoinEntity {
         this.rank = rank;
     }
 
-    @JsonProperty("price_usd")
+    @JsonProperty("quote.USD.price")
     public String getPriceUsd() {
-        return priceUsd;
+        return "13.00";
+        //return priceUsd;
     }
 
-    @JsonProperty("price_usd")
+    @JsonProperty("quote.USD.price")
     public void setPriceUsd(String priceUsd) {
         this.priceUsd = priceUsd;
     }
@@ -130,7 +131,8 @@ public class CryptoCoinEntity {
 
     @JsonProperty("24h_volume_usd")
     public String get24hVolumeUsd() {
-        return _24hVolumeUsd;
+        return "24.0";
+       // return _24hVolumeUsd;
     }
 
     @JsonProperty("24h_volume_usd")
@@ -138,12 +140,13 @@ public class CryptoCoinEntity {
         this._24hVolumeUsd = _24hVolumeUsd;
     }
 
-    @JsonProperty("market_cap_usd")
+    @JsonProperty("quote.USD.market_cap")
     public String getMarketCapUsd() {
-        return marketCapUsd;
+        return "12.0";
+        //return marketCapUsd;
     }
 
-    @JsonProperty("market_cap_usd")
+    @JsonProperty("quote.USD.market_cap")
     public void setMarketCapUsd(String marketCapUsd) {
         this.marketCapUsd = marketCapUsd;
     }
