@@ -10,7 +10,7 @@
         android:id="@+id/ivIcon"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        tools:background="@mipmap/ic_launcher" />
+        tools:background="@mipmap/ic_launcher"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,9 +23,7 @@
             android:id="@+id/tvNameAndSymbol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-
-            />
+            android:fontFamily="sans-serif-condensed"/>
 
         <View
             android:layout_width="match_parent"
@@ -37,9 +35,6 @@
             android:id="@+id/tvPriceAndVolume"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-
-            />
-
+            android:fontFamily="sans-serif-condensed"/>
     </LinearLayout>
 </LinearLayout>

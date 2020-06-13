@@ -35,9 +35,9 @@ public class Tracker implements LifecycleObserver {
     }
 
     private StringRequest generateTrackingStringRequest(final String eventName) {
-        return new StringRequest(Request.Method.POST, TRACKING_URL,
+        return new StringRequest(Request.Method.GET, TRACKING_URL,
                 response -> {
-                    // Log.d(TAG, "onResponse() called with: response = [" + response + "]");
+                     Log.d(TAG, "onResponse() called with: response = [" + response + "]");
 
                 },
                 error -> Log.d(TAG, "onErrorResponse() called with: error = [" + error + "]")) {
